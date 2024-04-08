@@ -1,20 +1,55 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samake projet Todo List</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+          integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
+          crossorigin="anonymous" />
+</head>
+<style>
+    #searchInput {
+        width: 240px; /* Ajuster la largeur selon vos besoins */
+        margin-left: 200px; /* Espacement à droite */
+        padding: 10px; /* Ajouter un peu de rembourrage pour le confort visuel */
+    }
+</style>
+<body>
+    <header>
+        <h1>La liste des taches</h1>
+        <input type="text" id="searchInput" placeholder="Rechercher...">
+    </header>
+    <form>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Liste de Tâches Interactive</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="container">
-            <h1>Liste de Tâches</h1>
-            <input type="text" id="taskInput" placeholder="Ajouter une tâche...">
-            <button onclick="addTask()">Ajouter</button>
-           
-            <ul id="taskList"></ul>
+        <input type="text" class="todo-input" />
+        <button class="todo-button" type="submit">
+            <i class="fas fa-plus-square"></i>
+        </button>
+        <div class="select">
+            <select name="todos" class="filter-todo">
+                <option value="all">Toutes</option>
+                <option value="completed">Complétée</option>
+                <option value="uncompleted">À Faire</option>
+            </select>
         </div>
-        <script src="JavaScript.js"></script>
-    </body>
+
+    </form>
+    <div class="items-wrap">
+        <label for="task-date">Due date: </label>
+        <input type="date" id="task-date" required />
+    </div>
+    <div class="items-wrap">
+        <label for="task-time">Time: </label>
+        <input type="time" id="task-time" required />
+    </div>
+    <div class="todo-container">
+        <ul class="todo-list"></ul>
+    </div>
+    <script src="./app.js"></script>
+</body>
 </html>
